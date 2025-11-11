@@ -1,0 +1,73 @@
+## Zomato Data Analysis Project
+
+This repository contains a Jupyter notebook that performs exploratory data analysis (EDA) on a Zomato restaurants dataset.
+
+Contents
+--------
+- `zomato-data-analysis-project.ipynb` — main analysis notebook (visualizations, preprocessing, and short conclusions).
+- `archive/Zomato data .csv` — the dataset used by the notebook (CSV file).
+
+Getting started
+---------------
+1. Open this folder in VS Code.
+2. Make sure you have a Python 3 environment with the required packages installed.
+
+Recommended packages
+--------------------
+- pandas
+- numpy
+- matplotlib
+- seaborn
+
+You can install the minimal requirements using pip:
+
+```powershell
+python -m pip install --upgrade pip
+pip install pandas numpy matplotlib seaborn
+```
+
+How to run the notebook
+-----------------------
+1. Open `zomato-data-analysis-project.ipynb` in VS Code or Jupyter Lab.
+2. Select a Python kernel that has the packages installed.
+3. Run the notebook cells in order. The notebook expects the dataset at `archive/Zomato data .csv` (relative to the notebook). If you moved the CSV, either update the path in the cell that calls `pd.read_csv(...)` or place the CSV back into the `archive` subfolder.
+
+Common issues & fixes
+----------------------
+- FileNotFoundError: No such file or directory: 'Zomato data .csv'
+	- Cause: the notebook originally attempted to read `Zomato data .csv` from the current working directory.
+	- Fix: ensure the CSV file is in `archive/` and the read call uses `archive/Zomato data .csv`, or provide the correct absolute path.
+
+- NameError or unexpected variable names
+	- Example: if a variable `f` is referenced where `df` (dataframe) is intended, change the variable to `df` consistently or update the references.
+
+Short overview of the notebook
+------------------------------
+- Imports libraries (pandas, numpy, matplotlib, seaborn).
+- Loads the dataset into a DataFrame (variable `df`).
+- Performs preprocessing (e.g., cleans `rate` values into numeric floats).
+- Produces visualizations: countplots, line plots, histograms, boxplots, and a heatmap.
+- Groups and aggregates some columns (e.g., votes by restaurant type).
+
+Key results (short)
+-------------------
+- Many restaurants fall into the "Dining" category.
+- Dining restaurants received the highest total votes in the dataset.
+- Ratings distribution is concentrated around mid-high values (approx. 3.5–4.0 in the processed data).
+
+Notes
+-----
+- This README uses the same file name as the project (`READ.me`). If you prefer the conventional `README.md`, you can rename this file.
+- If you want, I can create a small requirements file (`requirements.txt`) and/or run a quick kernel check to ensure the notebook runs end-to-end.
+
+License
+-------
+This project contains dataset analysis examples and is provided as-is for learning and demonstration.
+
+Contact / Next steps
+--------------------
+If you'd like, I can:
+- Add a `requirements.txt` with pinned versions.
+- Rename this file to `README.md` and add a short summary image of key visualizations.
+- Run the notebook headlessly and confirm all cells execute successfully.
+
